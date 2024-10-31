@@ -65,3 +65,11 @@ while True:
             render_2d_image(center_x, center_y, image_to_render)
 
     # Mostrar el frame
+    cv2.imshow("Realidad Aumentada", frame)
+
+    # Salir al presionar 'q'
+    if cv2.waitKey(1) & 0xFF == ord('q'):
+        break
+
+cap.release()
+cv2.destroyAllWindows()
