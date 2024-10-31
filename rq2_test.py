@@ -41,3 +41,18 @@ while cap.isOpened():
 
     # Detectar marcadores ArUco en el frame
     corners, ids, _ = aruco.detectMarkers(frame, aruco_dict, parameters=parameters)
+
+    # Dibuja los marcadores ArUco en la imagen
+    if ids is not None:
+        aruco.drawDetectedMarkers(frame, corners, ids)
+
+    # Detectar el código QR en el frame
+    qr_data, points, _ = qr_detector.detectAndDecode(frame)
+    if qr_data:
+        print("Código QR detectado:", qr_data)
+
+        # Mostrar la imagen 3D sobre el marcador en la cámara
+        if image_to_render is not None:
+            # Redimensionar la imagen a renderizar para ajustarse a un área de la ventana
+            h, w, _ = image_to_render.shape
+            resized_image = cv2.resize(image_to_render, (w // 2, h // 2))
