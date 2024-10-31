@@ -30,3 +30,10 @@ while True:
 
     # Muestra el frame con la realidad aumentada
     cv2.imshow("Realidad Aumentada", frame)
+
+    # Salir al presionar 'q'
+    if cv2.waitKey(1) & 0xFF == ord('q'):
+        break
+
+cap.release()
+cv2.destroyAllWindows()
