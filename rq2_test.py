@@ -67,3 +67,7 @@ while cap.isOpened():
     # Presionar 'q' para salir del bucle
     if cv2.waitKey(1) & 0xFF == ord('q'):
         break
+
+# Liberar la cámara y cerrar ventanas
+cap.release()
+cv2.destroyAllWindows()
