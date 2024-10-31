@@ -20,3 +20,13 @@ while True:
     if ids is not None:
         # Dibuja los contornos de los marcadores
         aruco.drawDetectedMarkers(frame, corners, ids)
+       
+        # Ejemplo: sobreponiendo un cuadro
+        for corner in corners:
+            # Coordenadas de la esquina superior izquierda del marcador
+            top_left = tuple(corner[0][0].astype(int))
+            bottom_right = tuple(corner[0][2].astype(int))
+            cv2.rectangle(frame, top_left, bottom_right, (0, 255, 0), 2)
+
+    # Muestra el frame con la realidad aumentada
+    cv2.imshow("Realidad Aumentada", frame)
