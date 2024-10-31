@@ -1,4 +1,3 @@
-
 import cv2
 import numpy as np
 
@@ -14,3 +13,8 @@ marker_image = cv2.aruco.drawMarker(aruco_dict, marker_id, marker_size, marker_i
 # Guardar la imagen del marcador
 cv2.imwrite(f"marker_{marker_id}.png", marker_image)
 print(f"Marcador guardado como marker_{marker_id}.png")
+
+# Mostrar la imagen del marcador
+cv2.imshow("Marcador ArUco", marker_image)
+cv2.waitKey(0)
+cv2.destroyAllWindows()
