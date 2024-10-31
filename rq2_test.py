@@ -18,3 +18,16 @@ def generate_qr(image_filename, qr_filename):
 image_filename = "bellaa.png"  # Cambia a la imagen que quieres mostrar
 qr_filename = "qr_code.png"
 generate_qr(image_filename, qr_filename)
+
+# Cargar la imagen 3D que queremos mostrar cuando se detecte el QR
+image_to_render = cv2.imread(image_filename)
+if image_to_render is not None:
+    image_to_render = cv2.cvtColor(image_to_render, cv2.COLOR_BGR2RGB)
+
+# Inicializa la cámara
+cap = cv2.VideoCapture(0)
+
+# Inicializa el diccionario y los parámetros de ArUco
+aruco_dict = aruco.Dictionary_get(aruco.DICT_6X6_250)
+parameters = aruco.DetectorParameters_create()
+qr_detector = cv2.QRCodeDetector()
