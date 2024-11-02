@@ -26,3 +26,8 @@ def display_image_in_3d(image):
     plt.imshow(image)
     plt.axis('off')  # Ocultar ejes
     plt.show()
+
+# Cargar la imagen que quieres usar
+image_filename = input("Ingresa el nombre del archivo de imagen: ")
+qr_filename = "qr_code.png"
+generate_qr(image_filename, qr_filename)
