@@ -49,3 +49,9 @@ while True:
     ret, frame = cap.read()
     if not ret:
         break
+
+    # Detectar marcadores en el frame
+    corners, ids, rejected = aruco.detectMarkers(frame, aruco_dict, parameters=parameters)
+    if ids is not None:
+        # Dibuja los contornos de los marcadores
+        aruco.drawDetectedMarkers(frame, corners, ids)
