@@ -60,3 +60,5 @@ while True:
         for corner in corners:
             # Leer QR
             qr_data, _ = cv2.QRCodeDetector()(frame)
+            if qr_data:
+                print("Código QR detectado: ", qr_data)
