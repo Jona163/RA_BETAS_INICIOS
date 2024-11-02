@@ -44,3 +44,8 @@ cap = cv2.VideoCapture(0)
 # Cargar el diccionario de ArUco
 aruco_dict = aruco.getPredefinedDictionary(aruco.DICT_6X6_250)
 parameters = aruco.DetectorParameters()
+
+while True:
+    ret, frame = cap.read()
+    if not ret:
+        break
