@@ -52,3 +52,14 @@ while True:
     if ids is not None:
         # Dibuja los contornos de los marcadores
         aruco.drawDetectedMarkers(frame, corners, ids)
+
+        # Renderizar imagen 3D en la ubicación del marcador
+        for i, corner in enumerate(corners):
+            # Obtener coordenadas del marcador
+            top_left = tuple(corner[0][0].astype(int))
+            bottom_right = tuple(corner[0][2].astype(int))
+            center_x = (top_left[0] + bottom_right[0]) / 2
+            center_y = (top_left[1] + bottom_right[1]) / 2
+
+            # Renderizar la imagen 2D
+            render_2d_image(center_x, center_y, image_to_render)
