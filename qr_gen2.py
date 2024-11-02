@@ -62,3 +62,7 @@ while True:
             qr_data, _ = cv2.QRCodeDetector()(frame)
             if qr_data:
                 print("Código QR detectado: ", qr_data)
+                # Cargar la imagen desde la ruta del QR
+                image_to_render = load_image(qr_data)
+                if image_to_render is not None:
+                    display_image_in_3d(image_to_render)  # Mostrar la imagen en 3D
