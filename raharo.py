@@ -32,3 +32,5 @@ def render_2d_image(x, y, image):
     glTexCoord2f(0, 0)
     glVertex3f(x - 1, y + 1, 0)  # Esquina superior izquierda
     glEnd()
+
+    glDisable(GL_TEXTURE_2D)
