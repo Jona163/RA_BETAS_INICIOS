@@ -34,3 +34,10 @@ def render_2d_image(x, y, image):
     glEnd()
 
     glDisable(GL_TEXTURE_2D)
+
+# Crear textura OpenGL
+texture_id = glGenTextures(1)
+glBindTexture(GL_TEXTURE_2D, texture_id)
+glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, image_to_render.shape[1], image_to_render.shape[0], 0, GL_BGR, GL_UNSIGNED_BYTE, image_to_render)
+glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR)
+glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR)
