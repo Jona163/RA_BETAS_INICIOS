@@ -69,3 +69,7 @@ while True:
 
     # Muestra el frame
     cv2.imshow("Realidad Aumentada", frame)
+
+    # Salir al presionar 'q'
+    if cv2.waitKey(1) & 0xFF == ord('q'):
+        break
