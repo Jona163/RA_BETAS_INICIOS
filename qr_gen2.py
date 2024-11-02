@@ -38,3 +38,6 @@ if qr_image is not None:
     plt.imshow(qr_image)
     plt.axis('off')  # Ocultar ejes
     plt.show()
+
+# Inicializa la cámara
+cap = cv2.VideoCapture(0)
