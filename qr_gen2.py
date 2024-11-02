@@ -31,3 +31,10 @@ def display_image_in_3d(image):
 image_filename = input("Ingresa el nombre del archivo de imagen: ")
 qr_filename = "qr_code.png"
 generate_qr(image_filename, qr_filename)
+
+# Cargar el código QR y mostrarlo
+qr_image = cv2.imread(qr_filename)
+if qr_image is not None:
+    plt.imshow(qr_image)
+    plt.axis('off')  # Ocultar ejes
+    plt.show()
