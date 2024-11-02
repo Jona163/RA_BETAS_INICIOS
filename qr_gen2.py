@@ -20,3 +20,9 @@ def load_image(image_filename):
         print("Error al cargar la imagen.")
         return None
     return cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
+
+# Función para mostrar la imagen en 3D
+def display_image_in_3d(image):
+    plt.imshow(image)
+    plt.axis('off')  # Ocultar ejes
+    plt.show()
