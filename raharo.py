@@ -16,3 +16,8 @@ parameters = aruco.DetectorParameters()
 # Cargar la imagen que quieres mostrar
 image_to_render = cv2.imread('ruta/a/tu/imagen.png')  # Cambia esto a la ruta de tu imagen
 image_to_render = cv2.flip(image_to_render, 0)  # Voltear la imagen para OpenGL
+
+# Configuración de OpenGL
+def render_2d_image(x, y, image):
+    glEnable(GL_TEXTURE_2D)
+    glBindTexture(GL_TEXTURE_2D, texture_id)
