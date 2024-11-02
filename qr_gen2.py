@@ -66,3 +66,6 @@ while True:
                 image_to_render = load_image(qr_data)
                 if image_to_render is not None:
                     display_image_in_3d(image_to_render)  # Mostrar la imagen en 3D
+
+    # Muestra el frame
+    cv2.imshow("Realidad Aumentada", frame)
