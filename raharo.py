@@ -41,3 +41,14 @@ glBindTexture(GL_TEXTURE_2D, texture_id)
 glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, image_to_render.shape[1], image_to_render.shape[0], 0, GL_BGR, GL_UNSIGNED_BYTE, image_to_render)
 glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR)
 glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR)
+
+while True:
+    ret, frame = cap.read()
+    if not ret:
+        break
+
+    # Detectar marcadores en el frame
+    corners, ids, rejected = aruco.detectMarkers(frame, aruco_dict, parameters=parameters)
+    if ids is not None:
+        # Dibuja los contornos de los marcadores
+        aruco.drawDetectedMarkers(frame, corners, ids)
