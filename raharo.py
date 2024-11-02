@@ -21,3 +21,14 @@ image_to_render = cv2.flip(image_to_render, 0)  # Voltear la imagen para OpenGL
 def render_2d_image(x, y, image):
     glEnable(GL_TEXTURE_2D)
     glBindTexture(GL_TEXTURE_2D, texture_id)
+
+    glBegin(GL_QUADS)
+    glTexCoord2f(0, 1)
+    glVertex3f(x - 1, y - 1, 0)  # Esquina inferior izquierda
+    glTexCoord2f(1, 1)
+    glVertex3f(x + 1, y - 1, 0)  # Esquina inferior derecha
+    glTexCoord2f(1, 0)
+    glVertex3f(x + 1, y + 1, 0)  # Esquina superior derecha
+    glTexCoord2f(0, 0)
+    glVertex3f(x - 1, y + 1, 0)  # Esquina superior izquierda
+    glEnd()
