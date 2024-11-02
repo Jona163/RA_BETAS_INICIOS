@@ -12,3 +12,11 @@ def generate_qr(image_filename, qr_filename):
     qr_image = qr.make_image(fill_color="black", back_color="white")
     qr_image.save(qr_filename)
     print(f"Código QR guardado como: {qr_filename}")
+
+# Función para cargar y mostrar una imagen
+def load_image(image_filename):
+    image = cv2.imread(image_filename)
+    if image is None:
+        print("Error al cargar la imagen.")
+        return None
+    return cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
