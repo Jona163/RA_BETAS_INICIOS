@@ -55,3 +55,8 @@ while True:
     if ids is not None:
         # Dibuja los contornos de los marcadores
         aruco.drawDetectedMarkers(frame, corners, ids)
+       
+        # Procesar cada marcador detectado
+        for corner in corners:
+            # Leer QR
+            qr_data, _ = cv2.QRCodeDetector()(frame)
