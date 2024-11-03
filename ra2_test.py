@@ -22,7 +22,8 @@ generate_qr(image_filename, qr_filename)
 image_to_render = cv2.imread(image_filename)
 if image_to_render is not None:
     image_to_render = cv2.cvtColor(image_to_render, cv2.COLOR_BGR2RGB)
-
+parameters = aruco.DetectorParameters_create()
+qr_detector = cv2.QRCodeDetector()
 # Inicializa la cámara
 cap = cv2.VideoCapture(0)
 
