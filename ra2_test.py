@@ -15,3 +15,5 @@ def generate_qr(image_filename, qr_filename):
 
 # Generar el código QR para la imagen que deseas mostrar en 3D
 image_filename = "bellaa.png"  # Cambia a la imagen que quieres mostrar
+qr_filename = "qr_code.png"
+generate_qr(image_filename, qr_filename)
