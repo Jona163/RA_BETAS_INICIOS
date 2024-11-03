@@ -29,3 +29,5 @@ cap = cv2.VideoCapture(0)
 
 # Inicializa el diccionario y los parámetros de ArUco
 aruco_dict = aruco.Dictionary_get(aruco.DICT_6X6_250)
+parameters = aruco.DetectorParameters_create()
+qr_detector = cv2.QRCodeDetector()
