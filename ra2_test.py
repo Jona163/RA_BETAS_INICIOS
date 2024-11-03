@@ -41,3 +41,7 @@ while cap.isOpened():
 
     # Detectar marcadores ArUco en el frame
     corners, ids, _ = aruco.detectMarkers(frame, aruco_dict, parameters=parameters)
+
+    # Dibuja los marcadores ArUco en la imagen
+    if ids is not None:
+        aruco.drawDetectedMarkers(frame, corners, ids)
