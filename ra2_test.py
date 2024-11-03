@@ -63,3 +63,7 @@ while cap.isOpened():
 
     # Mostrar el frame en una ventana
     cv2.imshow("Realidad Aumentada con QR", frame)
+
+    # Presionar 'q' para salir del bucle
+    if cv2.waitKey(1) & 0xFF == ord('q'):
+        break
