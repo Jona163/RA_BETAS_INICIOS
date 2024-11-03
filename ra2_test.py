@@ -38,3 +38,6 @@ while cap.isOpened():
     if not ret:
         print("No se pudo capturar el frame de la cámara.")
         break
+
+    # Detectar marcadores ArUco en el frame
+    corners, ids, _ = aruco.detectMarkers(frame, aruco_dict, parameters=parameters)
