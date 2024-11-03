@@ -56,3 +56,7 @@ while cap.isOpened():
             # Redimensionar la imagen a renderizar para ajustarse a un área de la ventana
             h, w, _ = image_to_render.shape
             resized_image = cv2.resize(image_to_render, (w // 2, h // 2))
+
+            # Determinar la posición de la imagen renderizada en el frame
+            y_offset, x_offset = 50, 50
+            frame[y_offset:y_offset + resized_image.shape[0], x_offset:x_offset + resized_image.shape[1]] = resized_image
