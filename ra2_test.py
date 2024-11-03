@@ -70,3 +70,4 @@ while cap.isOpened():
 
 # Liberar la cámara y cerrar ventanas
 cap.release()
+cv2.destroyAllWindows()
