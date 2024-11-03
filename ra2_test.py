@@ -20,3 +20,5 @@ generate_qr(image_filename, qr_filename)
 
 # Cargar la imagen 3D que queremos mostrar cuando se detecte el QR
 image_to_render = cv2.imread(image_filename)
+if image_to_render is not None:
+    image_to_render = cv2.cvtColor(image_to_render, cv2.COLOR_BGR2RGB)
