@@ -31,3 +31,7 @@ cap = cv2.VideoCapture(0)
 aruco_dict = aruco.Dictionary_get(aruco.DICT_6X6_250)
 parameters = aruco.DetectorParameters_create()
 qr_detector = cv2.QRCodeDetector()
+
+# Bucle principal para procesar el video en tiempo real
+while cap.isOpened():
+    ret, frame = cap.read()
