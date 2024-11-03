@@ -50,3 +50,6 @@ while cap.isOpened():
     qr_data, points, _ = qr_detector.detectAndDecode(frame)
     if qr_data:
         print("Código QR detectado:", qr_data)
+
+        # Mostrar la imagen 3D sobre el marcador en la cámara
+        if image_to_render is not None:
