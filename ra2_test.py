@@ -12,3 +12,6 @@ def generate_qr(image_filename, qr_filename):
     qr_image = qr.make_image(fill_color="black", back_color="white")
     qr_image.save(qr_filename)
     print(f"Código QR guardado como: {qr_filename}")
+
+# Generar el código QR para la imagen que deseas mostrar en 3D
+image_filename = "bellaa.png"  # Cambia a la imagen que quieres mostrar
