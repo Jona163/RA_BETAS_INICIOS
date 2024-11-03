@@ -45,3 +45,8 @@ while cap.isOpened():
     # Dibuja los marcadores ArUco en la imagen
     if ids is not None:
         aruco.drawDetectedMarkers(frame, corners, ids)
+
+    # Detectar el código QR en el frame
+    qr_data, points, _ = qr_detector.detectAndDecode(frame)
+    if qr_data:
+        print("Código QR detectado:", qr_data)
