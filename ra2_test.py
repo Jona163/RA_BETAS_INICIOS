@@ -60,3 +60,6 @@ while cap.isOpened():
             # Determinar la posición de la imagen renderizada en el frame
             y_offset, x_offset = 50, 50
             frame[y_offset:y_offset + resized_image.shape[0], x_offset:x_offset + resized_image.shape[1]] = resized_image
+
+    # Mostrar el frame en una ventana
+    cv2.imshow("Realidad Aumentada con QR", frame)
