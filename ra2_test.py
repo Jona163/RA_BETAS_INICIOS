@@ -35,3 +35,6 @@ qr_detector = cv2.QRCodeDetector()
 # Bucle principal para procesar el video en tiempo real
 while cap.isOpened():
     ret, frame = cap.read()
+    if not ret:
+        print("No se pudo capturar el frame de la cámara.")
+        break
